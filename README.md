@@ -9,6 +9,7 @@ SPN_CLIENT_ID=e...7
 SPN_CLIENT_SECRET=X...d
 UAMI_CLIENT_ID=a...f
 TENANT_ID=7...7
+...=...
 ```
 
 Run:
