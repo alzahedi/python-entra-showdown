@@ -29,7 +29,7 @@ result = spn_app.acquire_token_silent(scopes=scopes, account=None)
 if not result:
     result = spn_app.acquire_token_for_client(scopes=scopes)
 
-print("Token from UAMI")
+print("Token from msal for SPN")
 print(result["access_token"])
 
 # Azure AD
@@ -39,5 +39,5 @@ print(f"Using UAMI {uami_client_id} for authentication")
 uami_credential = ManagedIdentityCredential(client_id=uami_client_id)
 uami_token = uami_credential.get_token(*scopes)
 
-print("Token from UAMI")
+print("Token from azure.identity for UAMI")
 print(uami_token.token)
