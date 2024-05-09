@@ -1,0 +1,23 @@
+{
+    "AccessToken": {
+        "-login.microsoftonline.com-accesstoken-{{SPN_CLIENT_ID}}-{{TENANT_ID}}-https://management.core.windows.net//.default": {
+            "credential_type": "AccessToken",
+            "secret": "{{3_PART_TOKEN}}",
+            "home_account_id": null,
+            "environment": "login.microsoftonline.com",
+            "client_id": "{{SPN_CLIENT_ID}}",
+            "target": "https://management.core.windows.net//.default",
+            "realm": "{{TENANT_ID}}",
+            "token_type": "Bearer",
+            "cached_at": "1715265293",
+            "expires_on": "1715351692",
+            "extended_expires_on": "1715351692"
+        }
+    },
+    "AppMetadata": {
+        "appmetadata-login.microsoftonline.com-{{SPN_CLIENT_ID}}": {
+            "client_id": "{{SPN_CLIENT_ID}}",
+            "environment": "login.microsoftonline.com"
+        }
+    }
+}
