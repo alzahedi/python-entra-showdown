@@ -27,6 +27,7 @@ pip install -r requirements.txt
 # Run Demo
 #
 python demo.py
+python decrypt-token-store.py
 
 # Turn off virtual environment
 #
