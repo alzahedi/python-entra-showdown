@@ -24,7 +24,7 @@ catch {
 
 $chocolateyAppList = 'azure-cli|2.50.0,python38|3.8.10,vscode|1.79.2,vscode-python|2022.19.13071014,materialicon-vscode|4.28.0'
 
-appsToInstall = $chocolateyAppList -split "," | foreach { "$($_.Trim())" }
+$appsToInstall = $chocolateyAppList -split "," | foreach { "$($_.Trim())" }
 
 foreach ($app in $appsToInstall) {
 
