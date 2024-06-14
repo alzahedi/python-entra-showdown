@@ -41,40 +41,26 @@ deactivate
 
 # Running decrypt token store
 
+Decrypt token store is a small utility project to hydrate az cli token cache with token from HIMDS.
+
 ### Prerequisites
-1. Setup a VM or dev environment.
+1. Setup a Hyper-VM or dev environment.
 2. Make sure you have git installed on the machine.
-3. Run [pre req script](./decrypt-token-pre-req.ps1)
-4. Arc onboard the machine.
-5. Run below command just once to have .azure folder created and populated with defaults
-    ```
-    az login --service-principal `
-    --username <SPN_CLIENT_ID> `
-    --password SPN_CLIENT_SECRET `
-    --tenant SPN_TENANT_ID 
-    ``` 
-6. Go inside .azure folder to azureProfile.json file and replace the user name with arc server client id.
-7. Create a `.env` file that looks like this:
-    ```env
-    TENANT_ID=7...7
-    ...=...
-    ```
 
-### Turn on virtual environment
+### Launch project
 #
+1. Open up a powershell window in administrator mode.
+2. Go to the cloned repo root directory.
+3. Run the below [script](./token-persistor.ps1)
 
-Launch powershell as administrator and run
-```python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+```
+.\token-persistor.ps1 -SPN_CLIENT_ID <SPN_CLIENT_ID> `
+		      -SPN_CLIENT_SECRET <SPN_CLIENT_SECRET> `
+		      -TENANT_ID <TENANT_ID> `
+              -SUBSCRIPTION_ID <SUBSCRIPTION_ID> `
+		      -RESOURCE_GROUP_NAME <RESOURCE_GROUP_NAME> `
+		      -LOCATION <AZURE REGION>
 ```
 
-#### Run the decrypt store file to have the cache updated.
-```
-python decrypt-token-store.py
-```
-
-#### Turn off virtual environment
-```
-deactivate
-```
+The script installs few dependencies like vscode, python. 
+It onboards the machine to arc, gets a token from arc. It sets up python virtual environment, installs a bunch of dependencies and calls [decrypt-token-store.py](./decrypt-token-store.py) python script to manually hydrate the az cli token cache with token from arc.
