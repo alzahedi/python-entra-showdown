@@ -2,7 +2,7 @@
     "AccessToken": {
         "-login.microsoftonline.com-accesstoken-{{SPN_CLIENT_ID}}-{{TENANT_ID}}-https://management.core.windows.net//.default": {
             "credential_type": "AccessToken",
-            "secret": "{{3_PART_TOKEN}}",
+            "secret": "{{TOKEN}}",
             "home_account_id": null,
             "environment": "login.microsoftonline.com",
             "client_id": "{{SPN_CLIENT_ID}}",
