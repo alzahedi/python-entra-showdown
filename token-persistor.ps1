@@ -169,7 +169,10 @@ if($LastExitCode -eq 0){Write-Host -ForegroundColor yellow "To view your onboard
 
 Write-Host "Arc Agent Installation complete."
 
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User") 
+
+## Refresh environment variables
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+refreshenv
 
 # Get token from arc
 $token = getTokenFromArc
