@@ -5,7 +5,7 @@ param(
     [string]
     $SPN_CLIENT_SECRET,
     [string]
-    $SPN_TENANT_ID,
+    $TENANT_ID,
     [string]
     $SUBSCRIPTION_ID,
     [string]
@@ -48,7 +48,7 @@ foreach ($app in $appsToInstall) {
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User") 
 
 # login to azure
-az login --service-principal --username $SPN_CLIENT_ID --password $SPN_CLIENT_SECRET --tenant $SPN_TENANT_ID
+az login --service-principal --username $SPN_CLIENT_ID --password $SPN_CLIENT_SECRET --tenant $TENANT_ID
 # set subscription
 az account set --subscription $SUBSCRIPTION_ID
 
