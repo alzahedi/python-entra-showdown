@@ -169,6 +169,8 @@ if($LastExitCode -eq 0){Write-Host -ForegroundColor yellow "To view your onboard
 
 Write-Host "Arc Agent Installation complete."
 
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User") 
+
 # Get token from arc
 $token = getTokenFromArc
 $parsedToken = Parse-JWTtoken -token $token
